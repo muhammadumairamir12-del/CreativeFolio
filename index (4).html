@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umair Amir | Creative Portfolio</title>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==================== Google Fonts & Basic Setup ==================== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg-color: #1a1a1a;
+            --second-bg-color: #2b2b2b;
+            --text-color: #ffffff;
+            --main-color: #ff4500; /* OrangeRed */
+            --secondary-color: #ff6347; /* Tomato Red */
+            --shadow-color: rgba(255, 69, 0, 0.4);
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .heading span {
+            color: var(--main-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--shadow-color);
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: .1rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            box-shadow: 0 0 2rem var(--shadow-color);
+            transform: scale(1.05);
+        }
+
+
+        /* ==================== Header / Navigation Bar Styles ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid var(--second-bg-color);
+            transition: all .3s ease;
+        }
+
+        .header.sticky {
+            background: var(--bg-color);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color);
+        }
+
+        #menu-icon {
+            font-size: 3.6rem;
+            color: var(--text-color);
+            display: none;
+            cursor: pointer;
+        }
+
+        /* ==================== Home Section Styles ==================== */
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-content {
+             flex: 1;
+        }
+
+        .home-content h3 {
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+
+        .home-content h3:nth-of-type(2) {
+            margin-bottom: 2rem;
+        }
+
+        span.multiple-text {
+            color: var(--main-color);
+        }
+
+        .home-content h1 {
+            font-size: 5.6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .home-content p {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--main-color);
+            margin: 3rem 1.5rem 3rem 0;
+            transition: .5s ease;
+        }
+
+        .social-media a:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 1rem var(--shadow-color);
+        }
+
+        .fiverr-icon {
+            height: 1.8rem;
+            width: 1.8rem;
+            fill: var(--main-color);
+            transition: .5s ease;
+        }
+
+        .social-media a:hover .fiverr-icon {
+            fill: var(--bg-color);
+        }
+
+        .home-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .home-img img {
+            width: 35vw;
+            max-width: 450px;
+            animation: floatImage 4s ease-in-out infinite;
+            border-radius: 50%;
+            box-shadow: 0 0 5rem var(--shadow-color);
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2.4rem);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== About Section Styles ==================== */
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            background: var(--second-bg-color);
+        }
+        
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 35vw;
+            max-width: 450px;
+            border-radius: 50%;
+            border: .5rem solid var(--main-color);
+            box-shadow: 0 0 3rem var(--shadow-color);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            text-align: left;
+        }
+
+        .about-content h3 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            font-size: 1.6rem;
+            margin: 2rem 0 3rem;
+            line-height: 1.8;
+        }
+
+        /* ==================== Portfolio Section Styles ==================== */
+        .portfolio {
+            background: var(--bg-color);
+        }
+
+        .portfolio h2 {
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .portfolio-box {
+            position: relative;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+            overflow: hidden;
+            display: flex;
+            border: 2px solid var(--main-color);
+        }
+
+        .portfolio-box img {
+            width: 100%;
+            transition: .5s ease;
+        }
+
+        .portfolio-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0, .3), var(--main-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 4rem;
+            transform: translateY(100%);
+            transition: .5s ease;
+        }
+
+        .portfolio-box:hover .portfolio-layer {
+            transform: translateY(0);
+        }
+
+        .portfolio-layer h4 {
+            font-size: 3rem;
+            color: var(--text-color);
+        }
+
+        .portfolio-layer p {
+            font-size: 1.6rem;
+            margin: .3rem 0 1rem;
+            color: #f0f0f0;
+        }
+
+        .portfolio-layer a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background: var(--text-color);
+            border-radius: 50%;
+        }
+
+        .portfolio-layer a i {
+            font-size: 2rem;
+            color: var(--second-bg-color);
+        }
+
+        /* ==================== CV / Resume Section Styles ==================== */
+        .cv {
+            background: var(--second-bg-color);
+        }
+
+        .cv-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .cv-box {
+            background: var(--bg-color);
+            padding: 3rem;
+            border-radius: 2rem;
+            border-left: .5rem solid var(--main-color);
+            transition: .5s ease;
+        }
+
+        .cv-box:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0 .5rem 2rem var(--shadow-color);
+        }
+
+        .cv-box h3 {
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--main-color);
+        }
+
+        .cv-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        .cv-item::before {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--main-color);
+            left: -0.6rem;
+            top: 0;
+        }
+
+
+        .cv-item h4 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+        }
+
+        .cv-item p {
+            font-size: 1.4rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+        }
+
+        .skills {
+            padding-top: 4rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 1.5rem;
+            background: var(--bg-color);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
+            border-radius: 1rem;
+        }
+
+        /* ==================== Contact Section Styles ==================== */
+        .contact {
+            padding-bottom: 10rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .contact-info h3 {
+            font-size: 3.2rem;
+            color: var(--main-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+        }
+
+        .info-item i {
+            font-size: 2.2rem;
+            color: var(--main-color);
+            width: 3rem;
+            text-align: center;
+        }
+
+        .info-item a, .info-item span {
+            color: var(--text-color);
+            transition: .3s;
+        }
+
+        .info-item a:hover {
+            color: var(--main-color);
+        }
+
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .input-box input,
+        .contact form textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            background: var(--second-bg-color);
+            border-radius: .8rem;
+            margin: .7rem 0;
+            border: 2px solid transparent;
+            transition: .3s;
+        }
+
+        .input-box input:focus,
+        .contact form textarea:focus {
+            border-color: var(--main-color);
+        }
+
+        .input-box input {
+            width: 49%;
+        }
+
+        .contact form textarea {
+            resize: none;
+        }
+
+        .contact form .btn {
+            margin-top: 2rem;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        /* ==================== Footer Section Styles ==================== */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 9%;
+            background: var(--second-bg-color);
+            border-top: 1px solid var(--bg-color);
+        }
+
+        .footer-text p {
+            font-size: 1.6rem;
+        }
+
+        .footer-fiverr p {
+            font-size: 1.6rem;
+        }
+
+        .fiverr-link {
+            color: var(--main-color);
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .fiverr-link:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 .5rem var(--shadow-color);
+        }
+
+        .footer-iconTop a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            background: var(--main-color);
+            border-radius: .8rem;
+            transition: .5s ease;
+        }
+
+        .footer-iconTop a:hover {
+            box-shadow: 0 0 1rem var(--shadow-color);
+        }
+
+        .footer-iconTop a i {
+            font-size: 2.4rem;
+            color: var(--bg-color);
+        }
+
+        /* ==================== Breakpoints for Responsive Design ==================== */
+
+        @media (max-width: 1200px) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .header {
+                padding: 2rem 3%;
+            }
+            section {
+                padding: 10rem 3% 2rem;
+            }
+            .footer {
+                padding: 2rem 3%;
+            }
+            .portfolio-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+            }
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                padding: 1rem 3%;
+                background: var(--bg-color);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+                transition: .3s ease;
+            }
+            
+            .navbar.active {
+                left: 0;
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                text-align: center;
+            }
+
+            .home {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .home-content {
+                order: 2;
+                margin-top: 3rem;
+            }
+            
+            .home-content h3 {
+                font-size: 2.6rem;
+            }
+            .home-content h1 {
+                font-size: 5rem;
+            }
+            .home-img img {
+                width: 70vw;
+                margin-top: 4rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about-img {
+                order: 1;
+            }
+            .about-content {
+                order: 2;
+            }
+            .about-img img {
+                width: 70vw;
+                margin-top: 4rem;
+            }
+            
+            .about-content h2 {
+                text-align: center;
+            }
+            
+            .portfolio h2 {
+                margin-bottom: 3rem;
+            }
+            .portfolio-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-box input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 617px) {
+            .portfolio-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+            .contact form .input-box input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 365px) {
+            .home-img img {
+                width: 90vw;
+            }
+            .about-img img {
+                width: 90vw;
+            }
+            .footer {
+                flex-direction: column-reverse;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== Header / Navigation Bar ==================== -->
+    <header class="header">
+        <a href="#" class="logo">CreativeFolio.</a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#cv">CV</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="fas fa-bars" id="menu-icon"></div>
+    </header>
+
+    <!-- ==================== Home Section ==================== -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, I am</h3>
+            <h1>Umair Amir</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Welcome to my creative space. I build modern, responsive, and user-friendly websites that not only look good but also perform exceptionally.</p>
+            <div class="social-media">
+                <a href="https://wa.me/923188791637" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:muhammadumairamir12@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.fiverr.com/s/xX9rddx" target="_blank"><svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 16 16" class="fiverr-icon"><path d="M12.25,3.25H9.25V.25h-2.5V3.25H3.75v2.5H6.5V8a.75.75,0,0,0,.75.75h2a.75.75,0,0,0,.75-.75V5.75h2.75Zm-5,8.22a2.81,2.81,0,0,1,2.88-2.67,2.83,2.83,0,0,1,2.88,2.67A2.83,2.83,0,0,1,10.13,14,2.81,2.81,0,0,1,7.25,11.47Z"></path></svg></a>
+            </div>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+        <div class="home-img">
+            <img src="https://i.ibb.co/6rC6zB3/developer-image.png" alt="Developer Illustration">
+        </div>
+    </section>
+
+    <!-- ==================== About Section ==================== -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://i.ibb.co/yQdSBf0/profile-pic.png" alt="Umair Amir Profile">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Full-Stack Developer & UI/UX Enthusiast</h3>
+            <p>I am a passionate developer from Larr, Multan, Pakistan, with a strong focus on creating dynamic and user-centric web experiences. My expertise lies in front-end and back-end technologies, allowing me to build complete and scalable solutions. I am dedicated to writing clean, efficient code and always eager to learn new technologies to stay ahead in this ever-evolving industry.</p>
+            <a href="#cv" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- ==================== Portfolio Section ==================== -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="https://i.ibb.co/xGLd5C7/project1-corporate.jpg" alt="Corporate Website Project">
+                <div class="portfolio-layer">
+                    <h4>Corporate Website</h4>
+                    <p>A sleek and professional website for a business client.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="https://i.ibb.co/DzdVqD4/project2-ecommerce.jpg" alt="E-commerce Store Project">
+                <div class="portfolio-layer">
+                    <h4>E-commerce Store</h4>
+                    <p>A fully functional online store with payment integration.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="https://i.ibb.co/k2x2xN5/project3-landingpage.jpg" alt="Landing Page Project">
+                <div class="portfolio-layer">
+                    <h4>Landing Page</h4>
+                    <p>A high-converting landing page for a product launch.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+             <div class="portfolio-box">
+                <img src="https://i.ibb.co/N1WvB7F/project4-portfolio.jpg" alt="Portfolio Website Project">
+                <div class="portfolio-layer">
+                    <h4>Creative Portfolio</h4>
+                    <p>A personal portfolio to showcase creative work.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+             <div class="portfolio-box">
+                <img src="https://i.ibb.co/mH1m55T/project5-blog.jpg" alt="Blog Platform Project">
+                <div class="portfolio-layer">
+                    <h4>Blog Platform</h4>
+                    <p>A dynamic blog platform with a custom CMS.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="https://i.ibb.co/Z80k3yG/project6-webapp.jpg" alt="Web Application Project">
+                <div class="portfolio-layer">
+                    <h4>Web Application</h4>
+                    <p>A SaaS application for task management.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CV / Resume Section ==================== -->
+    <section class="cv" id="cv">
+        <h2 class="heading">My <span>Journey</span> & Skills</h2>
+        <div class="cv-container">
+            <div class="cv-box">
+                <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                <div class="cv-item">
+                    <h4>Senior Web Developer - Tech Solutions Inc.</h4>
+                    <p>2022 - Present</p>
+                    <p>Led development of client websites, focusing on performance and responsive design.</p>
+                </div>
+                <div class="cv-item">
+                    <h4>Junior Developer - Creative Minds</h4>
+                    <p>2020 - 2022</p>
+                    <p>Assisted in building and maintaining web applications using modern frameworks.</p>
+                </div>
+            </div>
+            <div class="cv-box">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div class="cv-item">
+                    <h4>BS in Computer Science - University of Engineering</h4>
+                    <p>2016 - 2020</p>
+                    <p>Focused on software development, algorithms, and database management.</p>
+                </div>
+                 <div class="cv-item">
+                    <h4>Web Development Certification - Online Course</h4>
+                    <p>2019</p>
+                    <p>Completed a comprehensive course on MERN stack development.</p>
+                </div>
+            </div>
+        </div>
+        <div class="skills">
+            <h2 class="heading">Technical <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">React / Next.js</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                </div>
+                 <div class="skill">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+                </div>
+                 <div class="skill">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Contact Section ==================== -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new ideas and opportunities.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Larr, Multan, Pakistan</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:muhammadumairamir12@gmail.com">muhammadumairamir12@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/923188791637" target="_blank">+92 318 8791637</a>
+                </div>
+            </div>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Mobile Number">
+                    <input type="text" placeholder="Email Subject">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== Footer Section ==================== -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Designed & Developed by <strong>Umair Amir</strong></p>
+        </div>
+        <div class="footer-fiverr">
+             <p>Ready to start your project? <a href="https://www.fiverr.com/s/xX9rddx" target="_blank" class="fiverr-link">Hire me on Fiverr!</a></p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fas fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Typed.js for dynamic text -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- ScrollReveal.js for animations -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- Custom JS Embedded -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            /* ==================== Navbar toggle for mobile ==================== */
+            let menuIcon = document.querySelector('#menu-icon');
+            let navbar = document.querySelector('.navbar');
+
+            menuIcon.onclick = () => {
+                menuIcon.classList.toggle('fa-times'); // Changed for better icon representation
+                navbar.classList.toggle('active');
+            };
+
+            /* ==================== Scroll section active link ==================== */
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('header nav a');
+
+            window.onscroll = () => {
+                sections.forEach(sec => {
+                    let top = window.scrollY;
+                    let offset = sec.offsetTop - 150;
+                    let height = sec.offsetHeight;
+                    let id = sec.getAttribute('id');
+
+                    if(top >= offset && top < offset + height) {
+                        navLinks.forEach(links => {
+                            links.classList.remove('active');
+                            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                        });
+                    };
+                });
+
+                /* ==================== Sticky navbar ==================== */
+                let header = document.querySelector('.header');
+                header.classList.toggle('sticky', window.scrollY > 100);
+
+                /* ==================== Remove toggle icon and navbar when click navbar link (scroll) ==================== */
+                if (navbar.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-times');
+                    navbar.classList.remove('active');
+                }
+            };
+            
+             // Close mobile nav when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('active')) {
+                        menuIcon.classList.remove('fa-times');
+                        navbar.classList.remove('active');
+                    }
+                });
+            });
+
+            /* ==================== ScrollReveal for animations ==================== */
+            ScrollReveal({
+                distance: '80px',
+                duration: 2000,
+                delay: 200
+            });
+
+            ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+            ScrollReveal().reveal('.home-img, .portfolio-box, .contact form, .cv-box', { origin: 'bottom' });
+            ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+            ScrollReveal().reveal('.home-content p, .about-content, .contact-info', { origin: 'right' });
+            ScrollReveal().reveal('.skills-container .skill', { origin: 'right', interval: 200 });
+
+
+            /* ==================== Typed.js for dynamic text in home section ==================== */
+            const typed = new Typed('.multiple-text', {
+                strings: ['Frontend Developer', 'Backend Developer', 'UI/UX Designer', 'Freelancer'],
+                typeSpeed: 100,
+                backSpeed: 100,
+                backDelay: 1000,
+                loop: true
+            });
+
+            /* ==================== Contact Form Validation (Simple) ==================== */
+            const contactForm = document.querySelector('.contact form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent actual submission for demo
+
+                const fullName = contactForm.querySelector('input[placeholder="Full Name"]');
+                const email = contactForm.querySelector('input[placeholder="Email Address"]');
+                const message = contactForm.querySelector('textarea');
+
+                let isValid = true;
+                let alertMessage = "Message sent successfully! (This is a demo)";
+
+                if (fullName.value.trim() === '') {
+                    isValid = false;
+                    alertMessage = "Please enter your full name.";
+                } else if (!validateEmail(email.value)) {
+                    isValid = false;
+                    alertMessage = "Please enter a valid email address.";
+                } else if (message.value.trim() === '') {
+                    isValid = false;
+                    alertMessage = "Please write your message.";
+                }
+
+                if (isValid) {
+                    alert(alertMessage);
+                    contactForm.reset();
+                } else {
+                    alert(alertMessage);
+                }
+            });
+
+            function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+        });
+    </script>
+</body>
+</html>
